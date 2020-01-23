@@ -21,11 +21,6 @@ export default function NasaGrid () {
     return (
         <div> 
             <NasaCard nasaData= {nasaData}/> 
-
-            {/* <img className= "imgClass" src= {nasaData.url}></img>
-            <h1>{nasaData.date}</h1>
-            </div> */}
             </div> 
-        
     )
 }
