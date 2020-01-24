@@ -1,14 +1,13 @@
 import React from "react";
-import NasaGrid from './nasaGrid'
+import NasaGrid from './NasaGrid'
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <h2>
+        Nasa 🚀!
+      </h2>
       <NasaGrid />
     </div>
   );

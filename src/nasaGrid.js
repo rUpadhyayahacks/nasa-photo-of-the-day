@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import NasaCard from './nasaCard';
+import NasaCard from './NasaCard';
 
 
 export default function NasaGrid () {
@@ -11,7 +11,8 @@ export default function NasaGrid () {
         .get('https://api.nasa.gov/planetary/apod?api_key=CHbdbqpW3y2kTgqRxAIwQcgNxU2fmOYJPzYfpjOe')
         .then(response => {
             console.log(response)
-            setNasaData(response.data)
+            const characters = response.data;
+            setNasaData(characters)
             
         })
         .catch(error => {
@@ -19,8 +20,21 @@ export default function NasaGrid () {
         });
     }, [])
     return (
-        <div> 
-            <NasaCard nasaData= {nasaData}/> 
-            </div> 
+        // <div> 
+        //     <NasaCard nasaData= {nasaData}/> 
+        //     </div> 
+        <div>
+            <h1>Photo of the day</h1>
+            
+                <NasaCard
+                key={nasaData.data}
+                title={nasaData.title}
+                explanation={nasaData.explanation}
+                image={nasaData.url}
+                />
+            })
+
+
+        </div>
     )
 }
